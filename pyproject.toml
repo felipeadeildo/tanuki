@@ -1,0 +1,7 @@
+[project]
+name = "tanuki"
+version = "0.1.0"
+description = "Self-hosted manga & manhwa aggregator with multi-source scraping, Cloudflare bypass, and a Tachiyomi-like bridge extension."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
