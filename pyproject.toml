@@ -5,3 +5,118 @@ description = "Self-hosted manga & manhwa aggregator with multi-source scraping,
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = []
+
+[dependency-groups]
+dev = [
+    "prek>=0.3.11",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+fix = true
+show-fixes = true
+output-format = "grouped"
+
+extend-exclude = ["alembic/*"]
+
+lint.select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "UP",  # pyupgrade
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "N",   # pep8-naming
+    "W",   # pycodestyle warnings
+    "RUF", # ruff-specific rules
+    "ARG", # flake8-unused-arguments
+    "ANN", # flake8-annotations
+    "D",   # pydocstyle
+]
+
+
+lint.ignore = [
+    "D107",   # Missing docstring in __init__
+    "D100",   # Missing docstring in public module
+    "D203",   # 1 blank line required before class docstring (conflita com D211)
+    "D212",   # Multi-line docstring summary should start at the first line
+    "D205",   # 1 blank line required between summary line and description
+    "D400",   # First line should end with a period
+    "D401",   # First line should be in imperative mood
+    "ANN001", # Missing type annotation for self in method
+    "ANN002", # Missing type annotation for cls in classmethod
+    "ANN003", # Missing type annotation for kwargs
+]
+
+lint.fixable = ["ALL"]
+lint.unfixable = []
+
+lint.isort.section-order = [
+    "future",
+    "standard-library",
+    "third-party",
+    "first-party",
+    "local-folder",
+]
+lint.isort.combine-as-imports = true
+
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+docstring-code-format = true
+
+
+# [tool.pyright]
+# include = ["tanuki", "tests"]
+# exclude = ["**/__pycache__", "**/.*", ".venv", "venv"]
+# ignore = []
+# # stubPath = "typings"
+# venvPath = "."
+# venv = ".venv"
+
+# # Python version and platform
+# pythonVersion = "3.14"
+# pythonPlatform = "Linux"
+
+# # Type checking mode: "off", "basic", "standard", "strict"
+# typeCheckingMode = "standard"
+
+# # Reporting rules
+# reportMissingImports = true
+# reportMissingTypeStubs = false
+
+# # Warnings
+# reportUnusedImport = "warning"
+# reportUnusedClass = "warning"
+# reportUnusedFunction = "warning"
+# reportUnusedVariable = "warning"
+# reportDuplicateImport = "warning"
+
+# # Optional member access
+# reportOptionalMemberAccess = "warning"
+# reportOptionalSubscript = "warning"
+# reportPrivateUsage = "warning"
+
+# # Errors
+# reportConstantRedefinition = "error"
+# reportIncompatibleMethodOverride = "error"
+# reportIncompatibleVariableOverride = "error"
+
+# # Disabled checks
+# reportUntypedFunctionDecorator = "none"
+# reportUntypedClassDecorator = "none"
+# reportUntypedBaseClass = "none"
+# reportUntypedNamedTuple = "none"
+
+# reportUnknownMemberType = "none"
+# reportCallIssue = "none"
+# reportAttributeAccessIssue = "warning"
+# reportUnknownParameterType = "none"
+# reportUnknownVariableType = "none"
+# reportMissingParameterType = "warning"
+# reportMissingTypeArgument = "none"
+# # useLibraryCodeForTypes = true
